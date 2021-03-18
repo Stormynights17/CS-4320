@@ -28,7 +28,7 @@ class Student(User.User):
         return grades
 
     def view_assignments(self,course):
-        course = self.all_courses['comp_sci']['assignments']
+        course = self.all_courses[course]['assignments']
         assignments = []
         for key in course:
             assignments.append([key,course[key]['due_date']])
@@ -36,4 +36,3 @@ class Student(User.User):
 
     def check_ontime(self,submission_date,due_date):
         return True
-
